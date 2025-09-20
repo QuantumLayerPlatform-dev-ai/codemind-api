@@ -1,0 +1,125 @@
+# CodeMind API - FastAPI Backend
+# .gitignore for Python FastAPI application
+
+# =============================================
+# SECURITY & CREDENTIALS - NEVER COMMIT THESE
+# =============================================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+credentials/
+keys/
+certs/
+
+# AWS & Azure credentials
+~/.aws/
+~/.azure/
+config/credentials.json
+config/secrets.yaml
+
+# =============================================
+# PYTHON DEVELOPMENT
+# =============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Testing
+.pytest_cache/
+.coverage
+.tox/
+htmlcov/
+.nyc_output/
+coverage.xml
+
+# =============================================
+# IDE & EDITOR FILES
+# =============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# =============================================
+# RUNTIME & LOGS
+# =============================================
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# =============================================
+# DATABASE & STORAGE
+# =============================================
+*.db
+*.sqlite
+*.sqlite3
+data/
+storage/
+uploads/
+backups/
+
+# =============================================
+# TEMPORARY & CACHE FILES
+# =============================================
+tmp/
+temp/
+.cache/
+
+# =============================================
+# FASTAPI SPECIFIC
+# =============================================
+# SQLAlchemy database files
+alembic/versions/*.py
+!alembic/versions/
+
+# FastAPI generated docs
+docs/_build/
+
+# =============================================
+# PROJECT SPECIFIC
+# =============================================
+# CodeMind API specific excludes
+test-outputs/
+generated-responses/
+sandbox/
+experiments/
+
+# Keep these important files
+!README.md
+!requirements.txt
+!LICENSE
