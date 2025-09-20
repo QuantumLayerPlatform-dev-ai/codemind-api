@@ -29,41 +29,41 @@ class Settings(BaseSettings):
         env="ALLOWED_ORIGINS"
     )
 
-    # Database
+    # Database (K8s NodePort)
     database_url: str = Field(
-        default="postgresql://postgres:codemind-dev-password@localhost:5432/codemind",
+        default="postgresql://postgres:codemind-dev-password@192.168.1.177:30432/codemind",
         env="DATABASE_URL"
     )
 
     async_database_url: str = Field(
-        default="postgresql+asyncpg://postgres:codemind-dev-password@localhost:5432/codemind",
+        default="postgresql+asyncpg://postgres:codemind-dev-password@192.168.1.177:30432/codemind",
         env="ASYNC_DATABASE_URL"
     )
 
-    # Redis
+    # Redis (K8s NodePort)
     redis_url: str = Field(
-        default="redis://:codemind-dev-password@localhost:6379",
+        default="redis://:codemind-dev-password@192.168.1.177:30379",
         env="REDIS_URL"
     )
 
-    # Vector Database
-    qdrant_host: str = Field(default="localhost", description="Qdrant host")
-    qdrant_port: int = Field(default=6333, description="Qdrant port")
+    # Vector Database (K8s NodePort)
+    qdrant_host: str = Field(default="192.168.1.177", description="Qdrant host")
+    qdrant_port: int = Field(default=30333, description="Qdrant port")
     qdrant_url: str = Field(
-        default="http://localhost:6333",
+        default="http://192.168.1.177:30333",
         env="QDRANT_URL"
     )
 
-    # Temporal
-    temporal_host: str = Field(default="localhost", env="TEMPORAL_HOST")
-    temporal_port: int = Field(default=7233, env="TEMPORAL_PORT")
+    # Temporal (K8s NodePort)
+    temporal_host: str = Field(default="192.168.1.177", env="TEMPORAL_HOST")
+    temporal_port: int = Field(default=30233, env="TEMPORAL_PORT")
     temporal_namespace: str = Field(default="default", env="TEMPORAL_NAMESPACE")
 
-    # NATS
-    nats_url: str = Field(default="nats://localhost:4222", env="NATS_URL")
+    # NATS (K8s NodePort)
+    nats_url: str = Field(default="nats://192.168.1.177:30422", env="NATS_URL")
 
-    # MinIO
-    minio_endpoint: str = Field(default="localhost:9000", env="MINIO_ENDPOINT")
+    # MinIO (K8s NodePort)
+    minio_endpoint: str = Field(default="192.168.1.177:30900", env="MINIO_ENDPOINT")
     minio_access_key: str = Field(default="minioadmin", env="MINIO_ACCESS_KEY")
     minio_secret_key: str = Field(default="codemind-dev-password", env="MINIO_SECRET_KEY")
     minio_secure: bool = Field(default=False, env="MINIO_SECURE")

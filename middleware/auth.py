@@ -6,7 +6,7 @@ from typing import Optional
 from fastapi import Request, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from starlette.middleware.base import BaseHTTPMiddleware
-import jwt
+from jose import jwt
 from datetime import datetime, timezone
 
 try:

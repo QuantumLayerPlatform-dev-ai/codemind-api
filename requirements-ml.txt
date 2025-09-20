@@ -1,0 +1,9 @@
+# ML Dependencies (Heavy - only when needed)
+# Include base requirements first: -r requirements-base.txt
+
+# Sentence Transformers (Large models)
+sentence-transformers==2.2.2
+
+# Alternative lightweight options for future:
+# torch --index-url https://download.pytorch.org/whl/cpu  # CPU-only version
+# transformers==4.30.0  # Base transformers without pre-trained models
